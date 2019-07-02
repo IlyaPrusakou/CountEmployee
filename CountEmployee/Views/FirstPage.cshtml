@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>Hello ASP.NET</title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <h2>Введите путь к вашему xml файлу.</h2>
+    <form method="post">
+        <div class="FirstPage">
+            <h3>Employee</h3>
+            <p>
+                <label>Path</label><br />
+                <input type="text" name="Path" />
+            </p>
+            <p>
+                <label>FileName(For Example - MyFile.xml)</label><br />
+                <input type="text" name="FileName" />
+            </p>
+
+        </div>
+
+        <p>
+            <input type="submit" value="Отправить" />
+        </p>
+    </form>
+    <input id="btnDepartments" type="button" value="Next">
+
+    <script type="text/javascript">
+        $(document).ready(function ()
+        {
+            
+            $('#btnDepartments').click(function (e)
+            {
+                location.href = '@Url.Content("~/Index")';
+            })
+
+        })
+    </script>
+</body>
+</html>

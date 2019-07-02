@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+<!doctype html>
+<html>
+<head>
+    <title>Hello ASP.NET</title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <h2> Hi Hi</h2>
+
+
+
+    <input id="btnEmployees" type="button" value="GetEmployees">
+    <input id="btnDepartments" type="button" value="GetDepartments">
+
+    <script type="text/javascript">
+        $(document).ready(function ()
+        {
+            $('#btnEmployees').click(function (e)
+            {
+                location.href = '@Url.Content("~/ShowEmployees")';
+            })
+            $('#btnDepartments').click(function (e)
+            {
+                location.href = '@Url.Content("~/ShowDepartments")';
+            })
+
+        })
+    </script>
+</body>
+</html>

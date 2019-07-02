@@ -1,0 +1,45 @@
+﻿@using Models;
+@model List<Employee>
+@{
+    Layout = null;
+}
+<!doctype html>
+<html>
+<head>
+    <title>Hello ASP.NET</title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <h2>Employees</h2>
+    <div>
+        <table class="table">
+            @foreach (Employee p in Model)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.FullName</td>
+                    <td>@p.Authority</td>
+                    <td>@p.DateOfChange</td>
+                    <td>@p.DateOfCreation</td>
+                    <td>@p.DateOfHiring</td>
+                    <td>@p.Department.NameOfDepartment</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div>
+        <input id="addform" type="button" value="Add">
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function ()
+        {
+            $('#addform').click(function (e)
+            {
+                location.href = '@Url.Content("~/UpdateEmployees")';
+            })
+
+        })
+    </script>
+</body>
+</html>
